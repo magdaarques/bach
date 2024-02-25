@@ -2,7 +2,7 @@
 
 applicació text edit en el programa llançat desde obs en app oberta.
 imatges de la partitura en el github.
-[connectant en la nanokontrol](https://github.com/ojack/hydra-standalone/blob/master/docs/midi.md)
+(connectant en la nanokontrol)[https://github.com/ojack/hydra-standalone/blob/master/docs/midi.md]
 
  // Type some code on a new line (such as "osc().out()"), and press CTRL+shift+enter
 a.show()
