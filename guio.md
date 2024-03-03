@@ -28,6 +28,29 @@ render(o0)
 2 - IMATGES
 
 
+part 1 imatges partitures - B/N
+
+s0.initImage("https://raw.githubusercontent.com/magdaarques/bach/main/bach_fuga_00.jpg") 
+s1.initImage("https://raw.githubusercontent.com/magdaarques/bach/main/bach_fuga_01.jpg") 
+s2.initImage("https://raw.githubusercontent.com/magdaarques/bach/main/bach_fuga_02.jpg") 
+
+//src(o0).scale(1.01).layer(
+//src(s0).scale(1,9/16)
+  //.invert().luma().invert()).out(o0)
+//render(o0)
+//osc(6,.2,.1).thresh(.2,0).modulate(src(s0).add(gradient()),1).scale(1,9/16).out(o1)
+osc(6,.2,.1).thresh(.2,0).modulate(src(s0),.9,1).scale(1,9/16).out(o1)
+
+//src(s1).scale(1,9/16).mask(o1).out(o0)
+src(o0).invert().scale(1.01).saturate(1.2)
+  .modulate(osc(6,.0,1.5).brightness(-.5).modulate(
+  noise(5).add(gradient()),1),.003
+).layer(
+src(s0).thresh().mask(o1).luma(.29).invert([0,1]).scale(2,9/16)).out(o0)
+
+part 2
+
+
 
 3 - CÀMERA SOROLL ONA
 
