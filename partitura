@@ -43,4 +43,8 @@ osc([3,5,6,7], 0.9, 0.001)
     .modulateScale(o0,0.9)
     .out(o0)
 
+4 - COLOR BY CAMERA
+
+s0.initCam()
+src(o2).modulateHue(src(o2).scale(1.01),1).layer(src(s0).modulate(o0,.2).posterize(100).colorama(.3,.4).mask(shape(4,.2,.002))).out(o2)
 
