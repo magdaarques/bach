@@ -70,9 +70,10 @@ render(o1)
 
 6 - SCAN I NOISE
 s0.initCam(1)
-noise(6,.2,1).out(o0)
-src(s0).thresh(()=>a.fft[0]*.8).out(o1)
-src(o1).modulate(o1,10,.2).layer(src(o2).diff(o1)).scale(1.01).luma(.81,.04).modulateHue(o0).out(o2)
+
+noise(()=>cc[16],()=>cc[17].smooth(),()=>cc[18]).r()=>cc[21].out(o0)
+src(s0).luma(()=>a.fft[0]*.8).g(()=>cc[22]).out(o1)
+src(o1).modulate(o0,10,.2).modulateHue(o0,1.4).layer(src(o1).diff(o2).modulateScrollY(o1,1.01,.1).modulateHue(o0).scale(1.01)).luma(.81,.04).g(()=>cc[23]).out(o2)
 render(o2)
 
 7 - KALEID
