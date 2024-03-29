@@ -27,7 +27,16 @@ src(s0)
 render(o0)
 
 2 - IMATGES
+s0.initCam(0)
+s1.initCam(2)
 
+src(s1).out(o0)
+src(s0).modulateScrollX(noise(3).shift(0,0.05).pixelate(8,8),0.1)
+  .modulateScrollY(noise(10,()=>(cc[2]*6.28)).thresh(0,0.05).pixelate(8,8),0.1)
+  .layer(src(s1).invert().contrast(()=>(cc[0]*6.28)-3.14)
+         .mask(osc(1,2,10)).scale(1,22/16/(5/3))).modulate(o0, ()=>(cc[1]*6.28),()=>a.fft[0]*1.3)
+  .out(o1)
+render(o1)
 
 
 3 - CÀMERA SOROLL ONA
